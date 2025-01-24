@@ -1,0 +1,32 @@
+[
+    {
+        "question": "Qu'est-ce que l'IA générative ?",
+        "options": [
+            "Une IA qui génère des réponses basées sur des données statistiques",
+            "Une technologie qui permet de créer du contenu comme des images ou du texte",
+            "Un système qui réagit uniquement aux commandes vocales",
+            "Une technique pour accélérer les calculs informatiques"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "Quelle technologie est souvent utilisée pour l'IA générative ?",
+        "options": [
+            "GANs (Generative Adversarial Networks)",
+            "Bases de données relationnelles",
+            "Algorithmes de tri",
+            "Serveurs web classiques"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Dans quel domaine l'IA générative est-elle couramment utilisée dans le jeu vidéo ?",
+        "options": [
+            "L'optimisation réseau",
+            "La modélisation d'objets 3D",
+            "La gestion des stocks",
+            "Le débogage automatique"
+        ],
+        "correct": 1
+    }
+]
