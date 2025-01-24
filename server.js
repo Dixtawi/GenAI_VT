@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const fs = require('fs');
 const app = express();
 const PORT = 3000;
@@ -8,6 +9,11 @@ const leaderboardPath = 'leaderboard.json';
 
 // Middleware pour traiter les données JSON
 app.use(bodyParser.json());
+
+// Rediriger vers la page d'accueil si aucune route n'est spécifiée
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/pages/index.html');
+});
 
 // Charger le leaderboard
 app.get('/leaderboard', (req, res) => {
@@ -60,6 +66,9 @@ app.post('/leaderboard', (req, res) => {
 
 // Servir les fichiers statiques
 app.use(express.static('./'));
+app.use(express.static('pages'));
+app.use(express.static('styles'));
+
 
 // Lancer le serveur
 app.listen(PORT, () => {

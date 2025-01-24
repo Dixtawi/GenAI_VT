@@ -80,14 +80,8 @@ async function endGame() {
     }
 
     quizContainer.innerHTML = `
-        <h3>Quiz terminé !</h3>
-        <p>Votre score : ${score}</p>
-        <h4>Leaderboard :</h4>
-        <ol>
-            ${leaderboard.map(entry => `<li>${entry.name}: ${entry.score}</li>`).join("")}
-        </ol>
-        <button onclick="restartQuiz()">Recommencer le quiz</button>
-    `;
+        <h2>Quiz terminé !</h2>
+        <p>Votre score : ${score}</p>`;
 }
 
 // Fonction pour redémarrer le quiz
