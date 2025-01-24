@@ -73,7 +73,7 @@ async function endGame() {
         await fetch('/leaderboard', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(leaderboard)
+            body: JSON.stringify({ name: playerName, score })
         });
     } catch (error) {
         console.error('Erreur lors de la sauvegarde du leaderboard :', error);
