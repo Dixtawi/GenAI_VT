@@ -1,7 +1,8 @@
 - Blague pour le pitch : proposer de gagner les projets github en cadeau pour celui qui fait le meilleur score (en vrai des chocolats suffiront)
+
 - Mettre le footer vraiment en bas de page
 - Ajouter les vraies questions
 - Faire la page explicative et la page d'accueil
-- Mettre sur un domaine (via github pages ou autre)
 - Rendre viable le site sur telephone
-- Stocker leaderboard et questions autrement que par fichier .json (genre database)
+- Mettre sur un domaine (via github pages ou autre)
+- Stocker leaderboard et questions via Vercel
