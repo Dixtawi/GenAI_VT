@@ -7,26 +7,55 @@
             "Un système qui réagit uniquement aux commandes vocales",
             "Une technique pour accélérer les calculs informatiques"
         ],
-        "correct": 1
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
     },
     {
-        "question": "Quelle technologie est souvent utilisée pour l'IA générative ?",
+        "question": "Quel est un exemple courant d'IA générative ?",
         "options": [
-            "GANs (Generative Adversarial Networks)",
-            "Bases de données relationnelles",
-            "Algorithmes de tri",
-            "Serveurs web classiques"
+            "Calcul des prévisions météorologiques",
+            "Création d'une œuvre d'art par une IA comme DALL·E",
+            "Analyse des données financières",
+            "Optimisation des itinéraires de livraison"
         ],
-        "correct": 0
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
     },
     {
-        "question": "Dans quel domaine l'IA générative est-elle couramment utilisée dans le jeu vidéo ?",
+        "question": "Quel algorithme est utilisé dans GPT-3 ?",
         "options": [
-            "L'optimisation réseau",
-            "La modélisation d'objets 3D",
-            "La gestion des stocks",
-            "Le débogage automatique"
+            "Les réseaux de convolution",
+            "Les réseaux de neurones récurrents (RNN)",
+            "Les transformeurs",
+            "Les algorithmes génétiques"
         ],
-        "correct": 1
+        "correct": 2,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Lequel est Pikachu ?",
+        "options": [
+            "pikachu",
+            "salameche",
+            "carapuce"
+        ],
+        "correct": 0,
+        "difficulty": "easy",
+        "type" : "image"
+    },
+    {
+        "question": "Qu'est-ce qu'un hyperparamètre dans un modèle d'IA ?",
+        "options": [
+            "Un paramètre ajusté automatiquement lors de l'entraînement",
+            "Une valeur prédéfinie qui guide l'entraînement d'un modèle",
+            "Un type de neurone spécialisé dans les réseaux profonds",
+            "Une métrique utilisée pour évaluer un modèle"
+        ],
+        "correct": 1,
+        "difficulty": "hard",
+        "type" : "definition"
     }
 ]

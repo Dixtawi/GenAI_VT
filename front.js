@@ -3,9 +3,10 @@ const quizContainer = document.getElementById("quiz-container");
 const startButton = document.getElementById("start-quiz");
 const playerNameInput = document.getElementById("player-name");
 
-let currentQuestion = 0;
+let currentQuestionIndex = 0;
 let score = 0;
 let leaderboard = [];
+let organizedQuizData = [];
 let playerName = "";
 
 // Fonction pour charger les données JSON
@@ -17,25 +18,58 @@ async function fetchJSON(filePath) {
     return await response.json();
 }
 
-let quizData = [];
+// Mélanger les questions par difficulté
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function organizeQuestionsByDifficulty(questions) {
+    const difficulties = ["easy", "medium", "hard"];
+    let sortedQuestions = [];
+
+    difficulties.forEach(difficulty => {
+        const filteredQuestions = questions.filter(q => q.difficulty === difficulty);
+        shuffleArray(filteredQuestions);
+        sortedQuestions = sortedQuestions.concat(filteredQuestions);
+    });
+
+    return sortedQuestions;
+}
 
 // Fonction pour charger une question
 function loadQuestion() {
-    const questionData = quizData[currentQuestion];
+    const questionData = organizedQuizData[currentQuestionIndex];
+
+    is_image = (questionData.type === "image");
+    image_options = is_image ? "image-options" : "";
+    image_option = is_image ? "image-option" : "";
 
     quizContainer.innerHTML = `
-        <div class="quiz-question">${questionData.question}</div>
-        <ul class="quiz-options">
-            ${questionData.options
-                .map((option, index) => `<li><button onclick="selectAnswer(${index})">${option}</button></li>`)
-                .join("")}
-        </ul>
-    `;
+            <div class="quiz-question">${questionData.question}</div>
+            <ul class="quiz-options ${image_options}">
+                ${questionData.options
+                    .map((option, index) => `
+                        <li>
+                            <button onclick="selectAnswer(${index})" class=${image_option}>
+                            ${is_image
+                                ? `<img src="assets/${option}.png" alt="${option}"/>`
+                                : option}
+                            </button>
+                        </li>
+                    `)
+                    .join("")}
+            </ul>
+        `;
 }
+
 
 // Fonction pour gérer la sélection de réponse
 function selectAnswer(selectedIndex) {
-    const questionData = quizData[currentQuestion];
+    const questionData = organizedQuizData[currentQuestionIndex];
 
     if (selectedIndex === questionData.correct) {
         score++;
@@ -46,9 +80,9 @@ function selectAnswer(selectedIndex) {
         return;
     }
 
-    currentQuestion++;
+    currentQuestionIndex++;
 
-    if (currentQuestion < quizData.length) {
+    if (currentQuestionIndex < quizData.length) {
         loadQuestion();
     } else {
         endGame();
@@ -86,7 +120,7 @@ async function endGame() {
 
 // Fonction pour redémarrer le quiz
 function restartQuiz() {
-    currentQuestion = 0;
+    currentQuestionIndex = 0;
     score = 0;
     loadQuestion();
 }
@@ -105,6 +139,7 @@ startButton.addEventListener("click", async () => {
     try {
         quizData = await fetchJSON('quiz.json');
         leaderboard = await fetchJSON('leaderboard.json');
+        organizedQuizData = organizeQuestionsByDifficulty(quizData);
         loadQuestion();
     } catch (error) {
         alert("Erreur : " + error.message);
