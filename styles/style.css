@@ -85,7 +85,7 @@ footer {
     font-size: 1.2em;
 }
 
-/* Options classiques (texte) */
+/* Options texte */
 .quiz-options {
     list-style-type: none;
     padding: 0;
@@ -130,6 +130,30 @@ footer {
 .image-options img:hover {
     transform: scale(1.1);
     border-color: #007bff;
+}
+
+.quiz-options button.correct {
+    background-color: #4caf50;
+    color: white;
+}
+
+.quiz-options button.incorrect {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Bulle explicative */
+.explanation {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f4f4f9;
+    border-left: 4px solid #6200ea;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.explanation p {
+    margin: 0 0 10px;
 }
 
 /* === PAGE DU LEADERBOARD === */

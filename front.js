@@ -18,7 +18,6 @@ async function fetchJSON(filePath) {
     return await response.json();
 }
 
-// Mélanger les questions par difficulté
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -70,16 +69,34 @@ function loadQuestion() {
 // Fonction pour gérer la sélection de réponse
 function selectAnswer(selectedIndex) {
     const questionData = organizedQuizData[currentQuestionIndex];
+    const optionsList = document.querySelectorAll(".quiz-options button");
 
-    if (selectedIndex === questionData.correct) {
+    optionsList.forEach((button) => (button.disabled = true));
+
+    optionsList[questionData.correct].classList.add("correct");
+
+    is_correct = (selectedIndex === questionData.correct)
+
+    if (is_correct) {
         score++;
-        alert("Bonne réponse !");
-    } else {
-        alert("Mauvaise réponse. La bonne réponse était : " + questionData.options[questionData.correct]);
-        endGame();
-        return;
+    }
+    else {
+        optionsList[selectedIndex].classList.add("incorrect");
     }
 
+    const explanationContainer = document.createElement("div");
+    explanationContainer.className = "explanation";
+    explanationContainer.innerHTML = `
+        <p>${questionData.explication || "Pas d'explication disponible pour cette question."}</p>
+        ${is_correct 
+            ? `<button onclick="nextQuestion()">Question suivante</button>`
+            : `<button onclick="endGame()">Score</button>`}
+    `;
+    quizContainer.appendChild(explanationContainer);
+}
+
+// Fonction pour passer à la question suivante
+function nextQuestion() {
     currentQuestionIndex++;
 
     if (currentQuestionIndex < quizData.length) {

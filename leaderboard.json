@@ -1,18 +1,14 @@
 [
   {
-    "name": "Paul2",
+    "name": "p",
+    "score": 5
+  },
+  {
+    "name": "Paul",
     "score": 4
   },
   {
     "name": "Marinou",
     "score": 3
-  },
-  {
-    "name": "p",
-    "score": 3
-  },
-  {
-    "name": "P",
-    "score": 2
   }
 ]
