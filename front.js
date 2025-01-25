@@ -118,7 +118,8 @@ async function endGame() {
 
     quizContainer.innerHTML = `
         <h2>Quiz terminé !</h2>
-        <p>Votre score : ${score}</p>`;
+        <p>Votre score : ${score}</p>
+        <button id="restart-quiz" onclick="startQuiz()">Rejouer</button>`;
 }
 
 function startQuiz() {
@@ -132,7 +133,6 @@ function startQuiz() {
 startButton.addEventListener("click", async () => {
     playerName = playerNameInput.value.trim();
     if (!playerName) {
-        alert("Veuillez entrer votre nom pour commencer le quiz.");
         return;
     }
 

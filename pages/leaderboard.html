@@ -20,9 +20,6 @@
         <h2>Top 5</h2>
         <ol id="leaderboard-list"></ol>
     </main>
-    <footer>
-        <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
-    </footer>
     <script>
         fetch('/leaderboard')
             .then(response => response.json())
@@ -39,4 +36,7 @@
             .catch(error => console.error('Erreur lors du chargement du leaderboard:', error));
     </script>
 </body>
+<footer>
+    <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
+</footer>
 </html>
