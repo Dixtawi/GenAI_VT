@@ -16,8 +16,8 @@
         <a href="quiz.html">Testez vos connaissances</a>
         <a href="leaderboard.html">Classement</a>
     </nav>
-    <main>
-        <h2>Meilleurs scores</h2>
+    <main id="leaderboard-main">
+        <h2>Top 5</h2>
         <ol id="leaderboard-list"></ol>
     </main>
     <footer>
@@ -30,7 +30,9 @@
                 const leaderboardList = document.getElementById('leaderboard-list');
                 if (leaderboardList){
                     leaderboardList.innerHTML = data
-                    .map(entry => `<li>${entry.name}: ${entry.score}</li>`)
+                    .slice(0, 5)
+                    .map(entry => 
+                            `<li>${entry.name}: ${entry.score} (${Math.floor(entry.time / 60)} min ${entry.time % 60} s)</li>`)
                     .join('');
                 }
             })

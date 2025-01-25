@@ -1,14 +1,22 @@
 [
   {
-    "name": "p",
-    "score": 5
-  },
-  {
     "name": "Paul",
-    "score": 4
+    "score": 5,
+    "time": 23
   },
   {
-    "name": "Marinou",
-    "score": 3
+    "name": "p",
+    "score": 3,
+    "time": 7
+  },
+  {
+    "name": "marina",
+    "score": 2,
+    "time": 108
+  },
+  {
+    "name": "nul",
+    "score": 0,
+    "time": 3
   }
 ]

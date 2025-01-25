@@ -1,4 +1,3 @@
-// Éléments HTML
 const quizContainer = document.getElementById("quiz-container");
 const startButton = document.getElementById("start-quiz");
 const playerNameInput = document.getElementById("player-name");
@@ -8,8 +7,8 @@ let score = 0;
 let leaderboard = [];
 let organizedQuizData = [];
 let playerName = "";
+let startTime;
 
-// Fonction pour charger les données JSON
 async function fetchJSON(filePath) {
     const response = await fetch(filePath);
     if (!response.ok) {
@@ -39,7 +38,6 @@ function organizeQuestionsByDifficulty(questions) {
     return sortedQuestions;
 }
 
-// Fonction pour charger une question
 function loadQuestion() {
     const questionData = organizedQuizData[currentQuestionIndex];
 
@@ -66,7 +64,6 @@ function loadQuestion() {
 }
 
 
-// Fonction pour gérer la sélection de réponse
 function selectAnswer(selectedIndex) {
     const questionData = organizedQuizData[currentQuestionIndex];
     const optionsList = document.querySelectorAll(".quiz-options button");
@@ -95,7 +92,6 @@ function selectAnswer(selectedIndex) {
     quizContainer.appendChild(explanationContainer);
 }
 
-// Fonction pour passer à la question suivante
 function nextQuestion() {
     currentQuestionIndex++;
 
@@ -106,25 +102,15 @@ function nextQuestion() {
     }
 }
 
-// Fonction pour terminer le jeu
 async function endGame() {
-    // Ajouter ou mettre à jour le score du joueur dans le leaderboard
-    const existingPlayer = leaderboard.find(entry => entry.name === playerName);
-    if (existingPlayer) {
-        existingPlayer.score = Math.max(existingPlayer.score, score); // Met à jour si le nouveau score est supérieur
-    } else {
-        leaderboard.push({ name: playerName, score });
-    }
-
-    // Trier le leaderboard
-    leaderboard.sort((a, b) => b.score - a.score);
-
+    const endTime = Date.now();
+    const timeTaken = Math.floor((endTime - startTime) / 1000);
     // Sauvegarder le leaderboard via le backend
     try {
         await fetch('/leaderboard', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: playerName, score })
+            body: JSON.stringify({ name: playerName, score, time: timeTaken })
         });
     } catch (error) {
         console.error('Erreur lors de la sauvegarde du leaderboard :', error);
@@ -135,10 +121,10 @@ async function endGame() {
         <p>Votre score : ${score}</p>`;
 }
 
-// Fonction pour redémarrer le quiz
-function restartQuiz() {
+function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
+    startTime = Date.now();
     loadQuestion();
 }
 
@@ -157,7 +143,7 @@ startButton.addEventListener("click", async () => {
         quizData = await fetchJSON('quiz.json');
         leaderboard = await fetchJSON('leaderboard.json');
         organizedQuizData = organizeQuestionsByDifficulty(quizData);
-        loadQuestion();
+        startQuiz();
     } catch (error) {
         alert("Erreur : " + error.message);
     }

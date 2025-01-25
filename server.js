@@ -28,8 +28,7 @@ app.get('/leaderboard', (req, res) => {
 
 // Mettre à jour le leaderboard
 app.post('/leaderboard', (req, res) => {
-    const { name, score } = req.body;
-
+    const { name, score, time } = req.body;
     if (!name || typeof score !== 'number') {
         res.status(400).send('Nom ou score invalide.');
         return;
@@ -41,16 +40,20 @@ app.post('/leaderboard', (req, res) => {
             return;
         }
 
-        const leaderboard = JSON.parse(data);
+        const leaderboard = JSON.parse(data) || [];
         const existingPlayer = leaderboard.find(entry => entry.name === name);
-
         if (existingPlayer) {
-            existingPlayer.score = Math.max(existingPlayer.score, score); // Met à jour si le score est supérieur
+            if (existingPlayer.score === score) {
+                existingPlayer.time = existingPlayer.time ? Math.min(existingPlayer.time, time) : time;
+            } else if (existingPlayer.score < score) {
+                existingPlayer.score = score;
+                existingPlayer.time = time;
+            }
         } else {
-            leaderboard.push({ name, score });
+            leaderboard.push({ name: name, score, time: time });
         }
 
-        leaderboard.sort((a, b) => b.score - a.score); // Trier les scores par ordre décroissant
+        leaderboard.sort((a, b) => b.score - a.score || a.time - b.time);
 
         fs.writeFile(leaderboardPath, JSON.stringify(leaderboard, null, 2), (err) => {
             if (err) {
