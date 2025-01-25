@@ -21,19 +21,30 @@
         <ol id="leaderboard-list"></ol>
     </main>
     <script>
-        fetch('/leaderboard')
-            .then(response => response.json())
+        fetch('/api/leaderboard')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur réseau');
+                }
+                return response.json();
+            })
             .then(data => {
                 const leaderboardList = document.getElementById('leaderboard-list');
-                if (leaderboardList){
+                if (leaderboardList && Array.isArray(data)) {
                     leaderboardList.innerHTML = data
-                    .slice(0, 5)
-                    .map(entry => 
-                            `<li>${entry.name}: ${entry.score} (${Math.floor(entry.time / 60)} min ${entry.time % 60} s)</li>`)
-                    .join('');
+                        .slice(0, 5)
+                        .map(entry => 
+                            `<li>${entry.name}: ${entry.score} points (${Math.floor(entry.time / 60)}min ${entry.time % 60}s)</li>`)
+                        .join('');
+                } else {
+                    leaderboardList.innerHTML = '<li>Aucun score pour le moment</li>';
                 }
             })
-            .catch(error => console.error('Erreur lors du chargement du leaderboard:', error));
+            .catch(error => {
+                console.error('Erreur lors du chargement du leaderboard:', error);
+                document.getElementById('leaderboard-list').innerHTML = 
+                    '<li>Erreur lors du chargement des scores</li>';
+            });
     </script>
 </body>
 <footer>
