@@ -1,6 +1,20 @@
-import { createLeaderboardTable, getLeaderboard, addScore } from '../lib/db';
+const { createLeaderboardTable, getLeaderboard, addScore } = require('../lib/db');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
+    // Activer CORS
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+    );
+
+    if (req.method === 'OPTIONS') {
+        res.status(200).end();
+        return;
+    }
+
     try {
         // Créer la table si elle n'existe pas
         await createLeaderboardTable();
@@ -22,6 +36,6 @@ export default async function handler(req, res) {
         }
     } catch (error) {
         console.error('Erreur serveur:', error);
-        res.status(500).json({ error: 'Erreur serveur' });
+        res.status(500).json({ error: 'Erreur serveur', details: error.message });
     }
 } 
