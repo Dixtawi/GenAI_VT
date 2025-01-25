@@ -105,21 +105,28 @@ function nextQuestion() {
 async function endGame() {
     const endTime = Date.now();
     const timeTaken = Math.floor((endTime - startTime) / 1000);
-    // Sauvegarder le leaderboard via le backend
+    
+    let message = `<h2>Quiz terminé !</h2><p>Votre score : ${score}</p>`;
+    
     try {
-        await fetch('/leaderboard', {
+        const response = await fetch('/api/leaderboard', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: playerName, score, time: timeTaken })
         });
+        
+        if (!response.ok) {
+            throw new Error('Erreur lors de la sauvegarde du score');
+        }
+        
+        message += '<p class="success">Score sauvegardé avec succès !</p>';
     } catch (error) {
         console.error('Erreur lors de la sauvegarde du leaderboard :', error);
+        message += '<p class="error">Erreur lors de la sauvegarde du score. Réessayez plus tard.</p>';
     }
 
-    quizContainer.innerHTML = `
-        <h2>Quiz terminé !</h2>
-        <p>Votre score : ${score}</p>
-        <button id="restart-quiz" onclick="startQuiz()">Rejouer</button>`;
+    message += '<button id="restart-quiz" onclick="startQuiz()">Rejouer</button>';
+    quizContainer.innerHTML = message;
 }
 
 function startQuiz() {
