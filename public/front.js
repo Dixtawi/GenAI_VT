@@ -89,7 +89,7 @@ function loadQuestion() {
                             class="quiz-option group relative p-6 rounded-xl border-2 border-gray-200 hover:border-violet-500 transition-all duration-200 ${isImage ? 'aspect-square' : ''}"
                             data-index="${index}">
                         ${isImage 
-                            ? `<img src="assets/${option.text}.png" alt="${option.text}" class="w-full h-full object-cover rounded-lg"/>`
+                            ? `<img src="../assets/${option.text}.png" alt="${option.text}" class="w-full h-full object-cover rounded-lg"/>`
                             : `<span class="text-lg text-gray-700 font-medium">${option.text}</span>`
                         }
                         <div class="absolute inset-0 bg-violet-500 opacity-0 group-hover:opacity-5 rounded-lg transition-opacity duration-200"></div>
