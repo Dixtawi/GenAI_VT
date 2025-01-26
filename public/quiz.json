@@ -8,7 +8,8 @@
         ],
         "correct": 0,
         "difficulty": "test",
-        "type" : "image"
+        "type": "image",
+        "explication": "Pikachu est un Pokémon électrique jaune, l'un des plus iconiques de la franchise Pokémon."
     },
     {
         "question": "Qu'est-ce que l'IA générative ?",
@@ -19,8 +20,9 @@
             "Une IA qui génère elle-même ses données d'entraînement"
         ],
         "correct": 1,
-        "difficulty": "medium",
-        "type" : "definition"
+        "difficulty": "easy",
+        "type": "definition",
+        "explication": "L'IA générative est une technologie qui crée du contenu original à partir d'instructions données."
     },
     {
         "question": "Quel technologie est utilisée dans un modèle comme GPT ?",
@@ -32,7 +34,8 @@
         ],
         "correct": 2,
         "difficulty": "medium",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "GPT utilise les transformeurs, une architecture conçue pour analyser des relations complexes dans les données textuelles."
     },
     {
         "question": "Qu'est-ce qu'un hyperparamètre dans un modèle d'IA ?",
@@ -44,7 +47,8 @@
         ],
         "correct": 1,
         "difficulty": "hard",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "Les hyperparamètres sont définis avant l'entraînement et influencent directement le comportement du modèle."
     },
     {
         "question": "Qu'est-ce que l'IA générative peut apporter aux jeux vidéo ?",
@@ -55,32 +59,22 @@
             "Une réduction des temps de chargement des maps"
         ],
         "correct": 1,
-        "difficulty": "medium",
-        "type" : "definition"
+        "difficulty": "easy",
+        "type": "definition",
+        "explication": "L'IA générative permet de créer du contenu unique et interactif, comme des environnements ou dialogues personnalisés pour les joueurs."
     },
     {
         "question": "Comment l'IA générative est-elle utilisée pour créer des dialogues dans les jeux ?",
         "options": [
             "En codant manuellement chaque phrase du personnage",
             "En générant des réponses adaptées en temps réel en fonction des choix du joueur",
-            "En utilisant des algorithmes de NLP",
+            "En utilisant des algorithmes de NLP pour comprendre le joueur",
             "En prenant une phrase aléatoire dans une base de données de dialogues"
         ],
         "correct": 1,
         "difficulty": "medium",
-        "type" : "definition"
-    },
-    {
-        "question": "Quel est un exemple d'utilisation de l'IA générative dans les graphismes des jeux ?",
-        "options": [
-            "Créer des textures ultra-réalistes basées sur des descriptions textuelles",
-            "Générer des bandes sonores adaptées aux actions du joueur",
-            "Améliorer l'intelligence des personnages non-joueurs (PNJ)",
-            "Remplacer le moteur de rendu graphique d'un jeu"
-        ],
-        "correct": 0,
-        "difficulty": "medium",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "L'IA générative adapte les dialogues aux actions et choix du joueur, offrant une expérience narrative fluide et dynamique."
     },
     {
         "question": "Quelle est une limite actuelle de l'IA générative dans les jeux vidéo ?",
@@ -92,7 +86,8 @@
         ],
         "correct": 1,
         "difficulty": "medium",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "L'IA générative rencontre des défis pour garantir la cohérence du contenu, particulièrement dans des scénarios complexes."
     },
     {
         "question": "Quel composante est essentielle pour entraîner des modèles génératifs ?",
@@ -104,7 +99,8 @@
         ],
         "correct": 1,
         "difficulty": "medium",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "Les modèles génératifs nécessitent de grandes quantités de données pour apprendre à produire du contenu diversifié et réaliste."
     },
     {
         "question": "Qu'est-ce qu'un modèle comme GPT peut apporter à un jeu vidéo ?",
@@ -115,8 +111,9 @@
             "Une amélioration du système multijoueur"
         ],
         "correct": 0,
-        "difficulty": "medium",
-        "type" : "definition"
+        "difficulty": "easy",
+        "type": "definition",
+        "explication": "GPT peut rendre les personnages non-joueurs (PNJ) plus vivants en leur permettant de répondre de manière cohérente et intelligente."
     },
     {
         "question": "Quelle est une des préoccupations éthiques liées à l'utilisation de l'IA générative dans les jeux vidéo ?",
@@ -127,8 +124,9 @@
             "L'absence de compatibilité avec les anciens jeux"
         ],
         "correct": 1,
-        "difficulty": "medium",
-        "type" : "definition"
+        "difficulty": "easy",
+        "type": "definition",
+        "explication": "L'IA générative risque de remplacer certains métiers créatifs, comme les artistes ou scénaristes, suscitant des inquiétudes quant à l'impact sur l'emploi."
     },
     {
         "question": "Comment l'IA générative peut-elle améliorer les quêtes dans les RPG ?",
@@ -139,8 +137,9 @@
             "En ajoutant des tutoriels plus détaillés pour chaque quête"
         ],
         "correct": 0,
-        "difficulty": "medium",
-        "type" : "definition"
+        "difficulty": "easy",
+        "type": "definition",
+        "explication": "L'IA générative permet d'adapter les quêtes en fonction des préférences ou choix du joueur, rendant l'expérience plus personnalisée."
     },
     {
         "question": "Quels jeux pourraient le plus bénéficier de l'IA générative ?",
@@ -152,7 +151,8 @@
         ],
         "correct": 1,
         "difficulty": "medium",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "Les jeux en openworld peuvent utiliser l'IA générative pour créer des environnements vastes, diversifiés et dynamiques."
     },
     {
         "question": "Qu'est-ce qui pourrait limiter l'utilisation de l'IA générative dans les jeux ?",
@@ -164,7 +164,8 @@
         ],
         "correct": 3,
         "difficulty": "medium",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "Les modèles d'IA générative nécessitent des ressources de calcul importantes, ce qui peut limiter leur utilisation en temps réel."
     },
     {
         "question": "L'IA générative peut-elle créer des musiques pour les jeux vidéo ?",
@@ -176,7 +177,8 @@
         ],
         "correct": 1,
         "difficulty": "medium",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "L'IA générative peut créer des musiques adaptées au contexte du jeu, renforçant l'immersion du joueur."
     },
     {
         "question": "Que signifie 'génération procédurale' dans les jeux vidéo ?",
@@ -188,19 +190,8 @@
         ],
         "correct": 0,
         "difficulty": "hard",
-        "type" : "definition"
-    },
-    {
-        "question": "Comment l'IA générative pourrait-elle transformer le processus de test des jeux ?",
-        "options": [
-            "En simulant des joueurs",
-            "En remplaçant complètement les testeurs humains",
-            "En trouvant automatiquement des bugs dans le code",
-            "En réduisant le temps de compilation des jeux"
-        ],
-        "correct": 0,
-        "difficulty": "medium",
-        "type" : "definition"
+        "type": "definition",
+        "explication": "La génération procédurale utilise des algorithmes pour créer du contenu unique, souvent aléatoire, comme des environnements ou des niveaux."
     },
     {
         "question": "Qu'est-ce que l'IA générative pourrait permettre dans les jeux multijoueurs ?",
@@ -211,8 +202,9 @@
             "Rendre tous les joueurs égaux en compétences"
         ],
         "correct": 0,
-        "difficulty": "medium",
-        "type" : "definition"
+        "difficulty": "easy",
+        "type": "definition",
+        "explication": "Elle peut générer des adversaires artificiels qui s'adaptent aux compétences des joueurs, améliorant leur expérience."
     },
     {
         "question": "Quel projet montre comment l'IA peut créer des mondes ouverts en temps réel ?",
@@ -224,7 +216,8 @@
         ],
         "correct": 2,
         "difficulty": "easy",
-        "type": "definition"
+        "type": "definition",
+        "explication": "Le projet Oasis de Decart explore l'utilisation de l'IA pour générer des mondes ouverts en temps réel."
     },
     {
         "question": "Quel mécanisme est central dans les Transformers pour analyser les relations complexes ?",
@@ -235,8 +228,9 @@
             "Les algorithmes génétiques"
         ],
         "correct": 0,
-        "difficulty": "hard",
-        "type": "definition"
+        "difficulty": "medium",
+        "type": "definition",
+        "explication": "Les Transformers utilisent un mécanisme appelé 'attention' pour repérer et analyser les relations entre différents éléments d'une séquence."
     },
     {
         "question": "Quelle est la première étape du processus de Point-E pour générer des objets 3D ?",
@@ -248,7 +242,8 @@
         ],
         "correct": 1,
         "difficulty": "medium",
-        "type": "definition"
+        "type": "definition",
+        "explication": "Point-E commence par convertir une description textuelle en une image synthétique, qui est ensuite utilisée pour générer un modèle 3D."
     },
     {
         "question": "Comment Point-E se distingue des méthodes traditionnelles pour générer des objets 3D ?",
@@ -260,7 +255,8 @@
         ],
         "correct": 1,
         "difficulty": "easy",
-        "type": "definition"
+        "type": "definition",
+        "explication": "Point-E se distingue par sa rapidité, générant des modèles 3D en quelques secondes, contrairement aux méthodes plus lentes et complexes."
     },
     {
         "question": "Quelle approche adoptent les Vision Transformers pour traiter les données 3D ?",
@@ -272,7 +268,8 @@
         ],
         "correct": 1,
         "difficulty": "hard",
-        "type": "definition"
+        "type": "definition",
+        "explication": "Les Vision Transformers divisent les données en petits segments (patches), permettant d'analyser et d'assembler les relations complexes entre eux."
     },
     {
         "question": "Quelle est une limite actuelle des objets générés par Point-E ?",
@@ -283,8 +280,9 @@
             "Il nécessite des descriptions textuelles très détaillées"
         ],
         "correct": 0,
-        "difficulty": "easy",
-        "type": "definition"
+        "difficulty": "medium",
+        "type": "definition",
+        "explication": "Point-E produit des objets 3D avec une résolution encore limitée, ce qui peut poser problème pour certaines applications exigeantes."
     },
     {
         "question": "Quel aspect des Transformers les rend adaptés à la modélisation 3D ?",
@@ -296,6 +294,7 @@
         ],
         "correct": 1,
         "difficulty": "hard",
-        "type": "definition"
+        "type": "definition",
+        "explication": "Les Transformers sont particulièrement efficaces pour analyser les relations géométriques complexes grâce à leur mécanisme d'attention."
     }
 ]
