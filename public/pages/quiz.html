@@ -4,55 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz - IA Générative</title>
-    <link rel="stylesheet" href="../styles/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/temp.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                        secondary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="font-['Inter']">
-    <div class="page-transition">
-        <nav class="flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
-                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">
-                    IA Générative
-                </span>
-            </div>
-            <div class="flex space-x-6">
-                <a href="/pages/index.html" class="nav-link">Accueil</a>
-                <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
-                <a href="/pages/quiz.html" class="nav-link active">Quiz</a>
-                <a href="/pages/leaderboard.html" class="nav-link">Classement</a>
+<body class="font-['Inter'] bg-gradient-to-br from-violet-50 via-indigo-50 to-purple-50">
+    <div class="page-transition min-h-screen flex flex-col">
+        <nav class="bg-white/80 backdrop-blur-md border-b border-violet-100 sticky top-0 z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
+                            IA Générative
+                        </span>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="/pages/index.html" class="nav-link">Accueil</a>
+                        <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
+                        <a href="/pages/quiz.html" class="nav-link active">Quiz</a>
+                        <a href="/pages/leaderboard.html" class="nav-link">Classement</a>
+                    </div>
+                </div>
             </div>
         </nav>
 
-        <main class="container mx-auto px-4 py-12">
-            <header class="text-center mb-12">
-                <h1 class="text-4xl font-bold mb-4">Quiz sur l'IA Générative</h1>
-                <p class="text-xl text-gray-600">Testez vos connaissances et défiez les autres participants !</p>
-            </header>
-
-            <div class="max-w-2xl mx-auto">
-                <div id="start-section" class="card text-center animate-fade-in">
-                    <h2 class="text-2xl font-semibold mb-6">Prêt à commencer ?</h2>
-                    <div class="mb-6">
-                        <input type="text" id="player-name" 
-                               class="input text-center text-lg" 
-                               placeholder="Entrez votre nom"
-                               autocomplete="off">
+        <main class="flex-grow container mx-auto px-4 py-12">
+            <div class="max-w-4xl mx-auto">
+                <div id="start-section" class="transform transition-all duration-500">
+                    <div class="text-center mb-12">
+                        <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                            Quiz IA Générative
+                        </h1>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Testez vos connaissances sur l'IA générative et défiez les autres participants !
+                        </p>
                     </div>
-                    <button id="start-quiz" 
-                            class="btn-primary w-full md:w-auto"
-                            disabled>
-                        Commencer le Quiz
-                    </button>
+
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                        <div class="grid md:grid-cols-2">
+                            <div class="p-8 bg-gradient-to-br from-violet-600 to-indigo-600 text-white">
+                                <h2 class="text-3xl font-bold mb-4">Comment jouer ?</h2>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-white text-violet-600 mr-3 font-bold">1</span>
+                                        <span>Entrez votre nom pour commencer</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-white text-violet-600 mr-3 font-bold">2</span>
+                                        <span>Répondez aux questions à choix multiples</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-white text-violet-600 mr-3 font-bold">3</span>
+                                        <span>Gagnez des points et comparez votre score</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-8">
+                                <h2 class="text-2xl font-semibold mb-6">Prêt à relever le défi ?</h2>
+                                <div class="space-y-6">
+                                    <div class="relative">
+                                        <input type="text" 
+                                               id="player-name" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-all duration-200 text-lg"
+                                               placeholder="Entrez votre nom"
+                                               autocomplete="off">
+                                    </div>
+                                    <button id="start-quiz" 
+                                            disabled
+                                            class="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold text-lg transform transition-all duration-200 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none">
+                                        Commencer le Quiz
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="quiz-container" class="card hidden animate-slide-up">
+                <div id="quiz-container" class="hidden transform transition-all duration-500">
                     <!-- Le contenu du quiz sera injecté ici par JavaScript -->
                 </div>
             </div>
         </main>
 
-        <footer class="bg-gray-50 py-12 mt-24">
+        <footer class="bg-white/80 backdrop-blur-md border-t border-violet-100 py-8">
             <div class="container mx-auto px-4 text-center text-gray-600">
                 <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
                 <p class="mt-2">Créé avec ❤️ pour les passionnés d'IA</p>
@@ -62,22 +131,16 @@
 
     <script src="../front.js"></script>
     <script>
-        // Activation/désactivation du bouton de démarrage
-        const playerNameInput = document.getElementById('player-name');
-        const startButton = document.getElementById('start-quiz');
-        const startSection = document.getElementById('start-section');
-        const quizContainer = document.getElementById('quiz-container');
-
-        playerNameInput.addEventListener('input', (e) => {
-            startButton.disabled = !e.target.value.trim();
-            startButton.classList.toggle('opacity-50', !e.target.value.trim());
-        });
-
-        // Animation de transition
-        startButton.addEventListener('click', () => {
-            if (playerNameInput.value.trim()) {
-                startSection.classList.add('hidden');
-                quizContainer.classList.remove('hidden');
+        // Activation/désactivation du bouton de démarrage avec animation fluide
+        document.getElementById('player-name').addEventListener('input', (e) => {
+            const startButton = document.getElementById('start-quiz');
+            const hasValue = e.target.value.trim().length > 0;
+            startButton.disabled = !hasValue;
+            startButton.classList.toggle('opacity-50', !hasValue);
+            if (hasValue) {
+                startButton.classList.add('pulse-animation');
+            } else {
+                startButton.classList.remove('pulse-animation');
             }
         });
     </script>

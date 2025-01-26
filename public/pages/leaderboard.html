@@ -4,43 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classement - IA Générative</title>
-    <link rel="stylesheet" href="../styles/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/temp.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="font-['Inter']">
-    <div class="page-transition">
-        <nav class="flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
-                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">
-                    IA Générative
-                </span>
-            </div>
-            <div class="flex space-x-6">
-                <a href="/pages/index.html" class="nav-link">Accueil</a>
-                <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
-                <a href="/pages/quiz.html" class="nav-link">Quiz</a>
-                <a href="/pages/leaderboard.html" class="nav-link active">Classement</a>
+<body class="font-['Inter'] bg-gradient-to-br from-violet-50 via-indigo-50 to-purple-50">
+    <div class="page-transition min-h-screen flex flex-col">
+        <nav class="bg-white/80 backdrop-blur-md border-b border-violet-100 sticky top-0 z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
+                            IA Générative
+                        </span>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="/pages/index.html" class="nav-link">Accueil</a>
+                        <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
+                        <a href="/pages/quiz.html" class="nav-link">Quiz</a>
+                        <a href="/pages/leaderboard.html" class="nav-link active">Classement</a>
+                    </div>
+                </div>
             </div>
         </nav>
 
-        <main class="container mx-auto px-4 py-12">
-            <header class="text-center mb-12">
-                <h1 class="text-4xl font-bold mb-4">Classement des joueurs</h1>
-                <p class="text-xl text-gray-600">Les meilleurs scores de nos participants !</p>
-            </header>
+        <main class="flex-grow container mx-auto px-4 py-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                        Classement
+                    </h1>
+                    <p class="text-xl text-gray-600">
+                        Découvrez les meilleurs scores de nos participants !
+                    </p>
+                </div>
 
-            <div class="max-w-2xl mx-auto">
-                <div class="card">
-                    <h2 class="text-2xl font-semibold mb-6 text-center">Top 5</h2>
-                    <ol id="leaderboard-list" class="space-y-4">
-                        <!-- Le contenu sera injecté ici par JavaScript -->
-                    </ol>
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Position</th>
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Joueur</th>
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Score</th>
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Temps</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leaderboard-list">
+                                    <tr>
+                                        <td colspan="4" class="px-6 py-12 text-center text-gray-500">
+                                            Chargement des scores...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <a href="/pages/quiz.html" 
+                       class="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold transform transition-all duration-200 hover:scale-105 hover:shadow-lg">
+                        Tenter de battre les records
+                    </a>
                 </div>
             </div>
         </main>
 
-        <footer class="bg-gray-50 py-12 mt-24">
+        <footer class="bg-white/80 backdrop-blur-md border-t border-violet-100 py-8">
             <div class="container mx-auto px-4 text-center text-gray-600">
                 <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
                 <p class="mt-2">Créé avec ❤️ pour les passionnés d'IA</p>
@@ -49,60 +82,70 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             const leaderboardList = document.getElementById('leaderboard-list');
             
-            fetch('/api/leaderboard')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Erreur réseau');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (Array.isArray(data) && data.length > 0) {
-                        leaderboardList.innerHTML = data
-                            .map((entry, index) => `
-                                <li class="leaderboard-item bg-white p-4 rounded-lg shadow" style="--index: ${index}">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center ${index < 3 ? 'text-yellow-500' : 'text-gray-500'} font-bold text-lg">
-                                            ${index + 1}
-                                        </div>
-                                        <div class="ml-4">
-                                            <h3 class="font-semibold">${entry.name}</h3>
-                                            <p class="text-sm text-gray-600">
-                                                Score: ${entry.score} points • 
-                                                Temps: ${Math.floor(entry.time / 60)}min ${entry.time % 60}s
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                            `)
-                            .join('');
-                    } else {
-                        leaderboardList.innerHTML = `
-                            <li class="text-center text-gray-500 py-8">
+            try {
+                const response = await fetch('/api/leaderboard');
+                if (!response.ok) {
+                    throw new Error('Erreur réseau');
+                }
+                const data = await response.json();
+                
+                if (data.length === 0) {
+                    leaderboardList.innerHTML = `
+                        <tr>
+                            <td colspan="4" class="px-6 py-12 text-center text-gray-500">
                                 Aucun score enregistré pour le moment.
                                 <br>
-                                <a href="/pages/quiz.html" class="text-primary-500 hover:text-primary-600 mt-2 inline-block">
+                                <a href="/pages/quiz.html" class="text-violet-600 hover:text-violet-700 mt-2 inline-block">
                                     Soyez le premier à jouer !
                                 </a>
-                            </li>
-                        `;
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur:', error);
-                    leaderboardList.innerHTML = `
-                        <li class="text-center text-red-500 py-8">
+                            </td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                leaderboardList.innerHTML = data.map((entry, index) => {
+                    const minutes = Math.floor(entry.time / 60);
+                    const seconds = entry.time % 60;
+                    const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    const position = index + 1;
+                    const medalClass = position <= 3 ? [
+                        'bg-yellow-100 text-yellow-800',
+                        'bg-gray-100 text-gray-800',
+                        'bg-amber-100 text-amber-800'
+                    ][position - 1] : '';
+
+                    return `
+                        <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full ${medalClass} font-bold">
+                                    ${position}
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 font-medium">${entry.name}</td>
+                            <td class="px-6 py-4">${entry.score} points</td>
+                            <td class="px-6 py-4">${formattedTime}</td>
+                        </tr>
+                    `;
+                }).join('');
+            } catch (error) {
+                console.error('Erreur:', error);
+                leaderboardList.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="px-6 py-12 text-center text-red-500">
                             Erreur lors du chargement des scores.
                             <br>
-                            <button onclick="location.reload()" class="text-primary-500 hover:text-primary-600 mt-2">
+                            <button onclick="location.reload()" class="text-violet-600 hover:text-violet-700 mt-2">
                                 Réessayer
                             </button>
-                        </li>
-                    `;
-                });
+                        </td>
+                    </tr>
+                `;
+            }
         });
     </script>
 </body>
