@@ -4,6 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
+    "dev": "npx tailwindcss -i ./public/styles/main.css -o ./public/styles/output.css --watch & npx serve public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +19,18 @@
   },
   "homepage": "https://github.com/Dixtawi/GenAI_VT#readme",
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@neondatabase/serverless": "^0.7.2",
     "body-parser": "^1.20.3",
     "express": "^4.18.2",
+    "framer-motion": "^12.0.5",
     "fs": "0.0.1-security",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.0"
   }
 }

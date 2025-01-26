@@ -1,26 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qu'est-ce que l'IA Générative ?</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <title>Découvrir l'IA - IA Générative</title>
+    <link rel="stylesheet" href="../styles/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Qu'est-ce que l'IA Générative ?</h1>
-    </header>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/explic">Qu'est-ce que l'IA Générative ?</a>
-        <a href="/quiz">Testez vos connaissances</a>
-        <a href="/leaderboard">Classement</a>
-    </nav>
-    <main>
-        <p>Cette page contiendra une explication détaillée sur l'IA générative.</p>
-    </main>
+<body class="font-['Inter']">
+    <div class="page-transition">
+        <nav class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
+                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">
+                    IA Générative
+                </span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="/pages/index.html" class="nav-link">Accueil</a>
+                <a href="/pages/explic.html" class="nav-link active">Découvrir l'IA</a>
+                <a href="/pages/quiz.html" class="nav-link">Quiz</a>
+                <a href="/pages/leaderboard.html" class="nav-link">Classement</a>
+            </div>
+        </nav>
+
+        <main class="container mx-auto px-4 py-12">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4">Qu'est-ce que l'IA Générative ?</h1>
+                <p class="text-xl text-gray-600">Découvrez les concepts fondamentaux de l'intelligence artificielle générative</p>
+            </header>
+
+            <div class="max-w-3xl mx-auto prose prose-lg">
+                <p>
+                    L'IA générative est une branche fascinante de l'intelligence artificielle capable de créer du contenu original : 
+                    textes, images, musiques, et bien plus encore.
+                </p>
+
+                <h2>Comment ça marche ?</h2>
+                <p>
+                    Ces systèmes apprennent à partir d'énormes quantités de données pour comprendre les patterns et structures,
+                    puis utilisent ces connaissances pour générer du nouveau contenu qui ressemble aux données d'entraînement.
+                </p>
+
+                <h2>Applications courantes</h2>
+                <ul>
+                    <li>Génération de texte (ChatGPT)</li>
+                    <li>Création d'images (DALL-E, Midjourney)</li>
+                    <li>Composition musicale</li>
+                    <li>Design et création artistique</li>
+                    <li>Aide à la programmation</li>
+                </ul>
+
+                <div class="bg-primary-50 p-6 rounded-lg mt-8">
+                    <h3 class="text-primary-700">Prêt à tester vos connaissances ?</h3>
+                    <p class="mb-4">Maintenant que vous en savez plus sur l'IA générative, pourquoi ne pas évaluer votre compréhension ?</p>
+                    <a href="/pages/quiz.html" class="btn-primary">Commencer le quiz</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-50 py-12 mt-24">
+            <div class="container mx-auto px-4 text-center text-gray-600">
+                <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
+                <p class="mt-2">Créé avec ❤️ pour les passionnés d'IA</p>
+            </div>
+        </footer>
+    </div>
 </body>
-<footer>
-    <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
-</footer>
 </html>

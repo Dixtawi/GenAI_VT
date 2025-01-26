@@ -1,26 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - IA Générative</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <title>IA Générative - Apprenez et Testez vos Connaissances</title>
+    <link rel="stylesheet" href="../styles/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Bienvenue sur le site d'IA Générative</h1>
-    </header>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/explic">Qu'est-ce que l'IA Générative ?</a>
-        <a href="/quiz">Testez vos connaissances</a>
-        <a href="/leaderboard">Classement</a>
-    </nav>
-    <main>
-        <p>Ce site vous permettra de découvrir l'IA générative, de tester vos connaissances via un quiz interactif et de voir les meilleurs scores dans le leaderboard.</p>
-    </main>
+<body class="font-['Inter']">
+    <div class="page-transition">
+        <nav class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
+                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">
+                    IA Générative
+                </span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="/pages/index.html" class="nav-link active">Accueil</a>
+                <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
+                <a href="/pages/quiz.html" class="nav-link">Quiz</a>
+                <a href="/pages/leaderboard.html" class="nav-link">Classement</a>
+            </div>
+        </nav>
+
+        <main class="container mx-auto px-4 py-12">
+            <header class="text-center mb-16">
+                <h1 class="text-5xl font-bold mb-6">
+                    Découvrez l'IA Générative
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Plongez dans le monde fascinant de l'intelligence artificielle générative. 
+                    Apprenez, testez vos connaissances et défiez les autres participants !
+                </p>
+            </header>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-primary-500 text-4xl mb-4">📚</div>
+                    <h3 class="text-xl font-semibold mb-2">Apprenez</h3>
+                    <p class="text-gray-600">
+                        Découvrez les concepts fondamentaux de l'IA générative à travers des explications claires et concises.
+                    </p>
+                    <a href="/pages/explic.html" class="btn-primary mt-4 inline-block">En savoir plus</a>
+                </div>
+
+                <div class="card transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-secondary-500 text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-2">Testez</h3>
+                    <p class="text-gray-600">
+                        Mettez vos connaissances à l'épreuve avec notre quiz interactif et gagnez des points.
+                    </p>
+                    <a href="/pages/quiz.html" class="btn-secondary mt-4 inline-block">Commencer le quiz</a>
+                </div>
+
+                <div class="card transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-primary-500 text-4xl mb-4">🏆</div>
+                    <h3 class="text-xl font-semibold mb-2">Comparez</h3>
+                    <p class="text-gray-600">
+                        Consultez le classement et comparez vos performances avec les autres participants.
+                    </p>
+                    <a href="/pages/leaderboard.html" class="btn-primary mt-4 inline-block">Voir le classement</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8 text-center">
+                <h2 class="text-3xl font-bold mb-4">Prêt à commencer ?</h2>
+                <p class="text-gray-600 mb-6">
+                    Lancez-vous dans l'aventure et découvrez le monde passionnant de l'IA générative !
+                </p>
+                <a href="/pages/quiz.html" class="btn-secondary inline-block">
+                    Commencer le quiz
+                </a>
+            </div>
+        </main>
+
+        <footer class="bg-gray-50 py-12 mt-24">
+            <div class="container mx-auto px-4 text-center text-gray-600">
+                <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
+                <p class="mt-2">Créé avec ❤️ pour les passionnés d'IA</p>
+            </div>
+        </footer>
+    </div>
 </body>
-<footer>
-    <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
-</footer>
 </html>
