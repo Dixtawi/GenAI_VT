@@ -1,26 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qu'est-ce que l'IA Générative ?</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <title>Découvrir l'IA - IA Générative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/temp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Qu'est-ce que l'IA Générative ?</h1>
-    </header>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/explic">Qu'est-ce que l'IA Générative ?</a>
-        <a href="/quiz">Testez vos connaissances</a>
-        <a href="/leaderboard">Classement</a>
-    </nav>
-    <main>
-        <p>Cette page contiendra une explication détaillée sur l'IA générative.</p>
-    </main>
+<body class="font-['Inter'] bg-gradient-to-br from-violet-50 via-indigo-50 to-purple-50">
+    <div class="page-transition min-h-screen flex flex-col">
+        <nav class="bg-white/80 backdrop-blur-md border-b border-violet-100 sticky top-0 z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
+                            IA Générative
+                        </span>
+                    </div>
+
+                    <!-- Menu mobile (hamburger) -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-gray-600 hover:text-violet-600 focus:outline-none p-2 rounded-lg transition-colors">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu desktop -->
+                    <div class="hidden md:flex space-x-6">
+                        <a href="/pages/index.html" class="nav-link">Accueil</a>
+                        <a href="/pages/explic.html" class="nav-link active">Découvrir l'IA</a>
+                        <a href="/pages/quiz.html" class="nav-link">Quiz</a>
+                        <a href="/pages/leaderboard.html" class="nav-link">Classement</a>
+                    </div>
+                </div>
+
+                <!-- Menu mobile (contenu) -->
+                <div id="mobile-menu" class="hidden md:hidden">
+                    <div class="py-2">
+                        <a href="/pages/index.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🏠</span>
+                                Accueil
+                            </span>
+                        </a>
+                        <a href="/pages/explic.html" class="mobile-nav-link active">
+                            <span class="flex items-center">
+                                <span class="mr-3">📚</span>
+                                Découvrir l'IA
+                            </span>
+                        </a>
+                        <a href="/pages/quiz.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🎯</span>
+                                Quiz
+                            </span>
+                        </a>
+                        <a href="/pages/leaderboard.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🏆</span>
+                                Classement
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow container mx-auto px-4 py-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                        Qu'est-ce que l'IA Générative ?
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Découvrez les concepts fondamentaux de l'intelligence artificielle générative et son impact sur notre monde
+                    </p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Introduction -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
+                        <div class="p-8">
+                            <div class="flex items-start space-x-6">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Une révolution créative</h2>
+                                    <p class="text-lg text-gray-600 leading-relaxed">
+                                        L'IA générative est une branche fascinante de l'intelligence artificielle capable de créer du contenu original : 
+                                        textes, images, musiques, et bien plus encore. Ces systèmes apprennent à partir d'énormes quantités de données 
+                                        pour comprendre les patterns et structures, puis utilisent ces connaissances pour générer du nouveau contenu.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment ça marche -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
+                        <div class="p-8">
+                            <div class="flex items-start space-x-6">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Comment ça marche ?</h2>
+                                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                                        Ces systèmes utilisent des réseaux de neurones complexes pour :
+                                    </p>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-center space-x-3">
+                                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
+                                                <span class="text-violet-600 text-sm font-bold">1</span>
+                                            </span>
+                                            <span class="text-gray-600">Analyser de grandes quantités de données</span>
+                                        </li>
+                                        <li class="flex items-center space-x-3">
+                                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
+                                                <span class="text-violet-600 text-sm font-bold">2</span>
+                                            </span>
+                                            <span class="text-gray-600">Identifier des patterns et structures</span>
+                                        </li>
+                                        <li class="flex items-center space-x-3">
+                                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
+                                                <span class="text-violet-600 text-sm font-bold">3</span>
+                                            </span>
+                                            <span class="text-gray-600">Générer du nouveau contenu similaire</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Applications -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
+                        <div class="p-8">
+                            <div class="flex items-start space-x-6">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Applications courantes</h2>
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-xl p-6">
+                                            <h3 class="font-semibold text-gray-800 mb-2">Génération de texte</h3>
+                                            <p class="text-gray-600">ChatGPT et autres modèles de langage</p>
+                                        </div>
+                                        <div class="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-xl p-6">
+                                            <h3 class="font-semibold text-gray-800 mb-2">Création d'images</h3>
+                                            <p class="text-gray-600">DALL-E, Midjourney, Stable Diffusion</p>
+                                        </div>
+                                        <div class="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-xl p-6">
+                                            <h3 class="font-semibold text-gray-800 mb-2">Composition musicale</h3>
+                                            <p class="text-gray-600">Création de mélodies et arrangements</p>
+                                        </div>
+                                        <div class="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-xl p-6">
+                                            <h3 class="font-semibold text-gray-800 mb-2">Aide au développement</h3>
+                                            <p class="text-gray-600">GitHub Copilot, assistance à la programmation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl shadow-xl overflow-hidden">
+                        <div class="p-8 text-center text-white">
+                            <h2 class="text-2xl font-bold mb-4">Prêt à tester vos connaissances ?</h2>
+                            <p class="text-lg mb-6 opacity-90">
+                                Maintenant que vous en savez plus sur l'IA générative, pourquoi ne pas évaluer votre compréhension ?
+                            </p>
+                            <a href="/pages/quiz.html" 
+                               class="inline-block px-8 py-4 bg-white text-violet-600 rounded-lg font-semibold transform transition-all duration-200 hover:scale-105 hover:shadow-lg">
+                                Commencer le quiz
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-white/80 backdrop-blur-md border-t border-violet-100 py-8">
+            <div class="container mx-auto px-4 text-center text-gray-600">
+                <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
+            </div>
+        </footer>
+    </div>
+
+    <style>
+        .mobile-nav-link {
+            @apply block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-all duration-200;
+        }
+        .mobile-nav-link.active {
+            @apply bg-violet-50 text-violet-600 font-semibold;
+        }
+        .animate-fade-in-down {
+            animation: fadeInDown 0.3s ease-out;
+        }
+        .animate-slide-in {
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-10px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+    <script>
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('show');
+
+            // Changer l'icône
+            const icon = mobileMenuButton.querySelector('svg');
+            if (!isExpanded) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            }
+        });
+
+        // Fermer le menu mobile lors du clic sur un lien
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('show');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                const icon = mobileMenuButton.querySelector('svg');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            });
+        });
+    </script>
 </body>
-<footer>
-    <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
-</footer>
 </html>

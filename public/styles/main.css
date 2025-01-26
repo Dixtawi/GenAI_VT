@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen text-gray-800 antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .quiz-options {
+    @apply grid gap-4 mt-6;
+  }
+
+  .quiz-option {
+    @apply btn bg-white border-2 border-gray-200 text-gray-700 hover:border-primary-500 hover:bg-primary-50;
+  }
+
+  .quiz-option.correct {
+    @apply bg-green-500 text-white border-green-500 hover:bg-green-600;
+  }
+
+  .quiz-option.incorrect {
+    @apply bg-red-500 text-white border-red-500 hover:bg-red-600;
+  }
+
+  .explanation {
+    @apply mt-6 p-4 rounded-lg bg-gray-50 border border-gray-200 animate-fade-in;
+  }
+}
+
+/* Animations personnalisées */
+.page-transition {
+  @apply animate-fade-in;
+}
+
+.quiz-question {
+  @apply text-xl font-semibold mb-4 animate-slide-up;
+}
+
+.leaderboard-item {
+  @apply animate-bounce-in;
+  animation-delay: calc(var(--index) * 100ms);
+}
+
+/* Navigation */
+nav {
+  @apply bg-white shadow-md px-6 py-4 mb-8;
+}
+
+nav a {
+  @apply text-gray-600 hover:text-primary-500 transition-colors duration-200 mx-4;
+}
+
+nav a.active {
+  @apply text-primary-500 font-medium;
+}
+
+/* Header */
+header {
+  @apply text-center mb-12;
+}
+
+header h1 {
+  @apply text-4xl font-bold text-gray-900 mb-4;
+  background: linear-gradient(to right, theme('colors.primary.500'), theme('colors.secondary.500'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Main content */
+main {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+/* Responsive design */
+@media (min-width: 640px) {
+  .quiz-options {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+    @apply flex justify-between items-center;
+  }
+}
+
+/* Loading states */
+.loading {
+  @apply animate-pulse bg-gray-200;
+}
+
+/* Tooltips */
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+} 

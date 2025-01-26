@@ -1,29 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz - IA Générative</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/temp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                        secondary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <h1>Quiz sur l'IA Générative</h1>
-    </header>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/explic">Qu'est-ce que l'IA Générative ?</a>
-        <a href="/quiz">Testez vos connaissances</a>
-        <a href="/leaderboard">Classement</a>
-    </nav>
-    <main>
-        <input type="text" id="player-name" placeholder="Entrez votre nom">
-        <button id="start-quiz">Commencer le Quiz</button>
-        <div id="quiz-container"></div>
-    </main>
+<body class="font-['Inter'] bg-gradient-to-br from-violet-50 via-indigo-50 to-purple-50">
+    <div class="page-transition min-h-screen flex flex-col">
+        <nav class="bg-white/80 backdrop-blur-md border-b border-violet-100 sticky top-0 z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
+                            IA Générative
+                        </span>
+                    </div>
+
+                    <!-- Menu mobile (hamburger) -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" 
+                                class="text-gray-600 hover:text-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-500 rounded-lg p-2 transition-colors"
+                                aria-label="Menu principal">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu desktop -->
+                    <div class="hidden md:flex space-x-6">
+                        <a href="/pages/index.html" class="nav-link">Accueil</a>
+                        <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
+                        <a href="/pages/quiz.html" class="nav-link active">Quiz</a>
+                        <a href="/pages/leaderboard.html" class="nav-link">Classement</a>
+                    </div>
+                </div>
+
+                <!-- Menu mobile (contenu) -->
+                <div id="mobile-menu" class="hidden md:hidden">
+                    <div class="py-2">
+                        <a href="/pages/index.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🏠</span>
+                                Accueil
+                            </span>
+                        </a>
+                        <a href="/pages/explic.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">📚</span>
+                                Découvrir l'IA
+                            </span>
+                        </a>
+                        <a href="/pages/quiz.html" class="mobile-nav-link active">
+                            <span class="flex items-center">
+                                <span class="mr-3">🎯</span>
+                                Quiz
+                            </span>
+                        </a>
+                        <a href="/pages/leaderboard.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🏆</span>
+                                Classement
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow container mx-auto px-4 py-12">
+            <div class="max-w-4xl mx-auto">
+                <div id="start-section" class="transform transition-all duration-500">
+                    <div class="text-center mb-12">
+                        <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                            Quiz IA Générative
+                        </h1>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Testez vos connaissances sur l'IA générative et défiez les autres participants !
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                        <div class="grid md:grid-cols-2">
+                            <div class="p-8 bg-gradient-to-br from-violet-600 to-indigo-600 text-white">
+                                <h2 class="text-3xl font-bold mb-4">Comment jouer ?</h2>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-white text-violet-600 mr-3 font-bold">1</span>
+                                        <span>Entrez votre nom pour commencer</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-white text-violet-600 mr-3 font-bold">2</span>
+                                        <span>Répondez aux questions à choix multiples</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-white text-violet-600 mr-3 font-bold">3</span>
+                                        <span>Gagnez des points et comparez votre score</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-8">
+                                <h2 class="text-2xl font-semibold mb-6">Prêt à relever le défi ?</h2>
+                                <div class="space-y-6">
+                                    <div class="relative">
+                                        <input type="text" 
+                                               id="player-name" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-all duration-200 text-lg"
+                                               placeholder="Entrez votre nom"
+                                               autocomplete="off">
+                                    </div>
+                                    <button id="start-quiz" 
+                                            disabled
+                                            class="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold text-lg transform transition-all duration-200 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none">
+                                        Commencer le Quiz
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz-container" class="hidden transform transition-all duration-500">
+                    <!-- Le contenu du quiz sera injecté ici par JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-white/80 backdrop-blur-md border-t border-violet-100 py-8">
+            <div class="container mx-auto px-4 text-center text-gray-600">
+                <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
+            </div>
+        </footer>
+    </div>
+
+    <style>
+        .mobile-nav-link {
+            @apply block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-all duration-200;
+        }
+        .mobile-nav-link.active {
+            @apply bg-violet-50 text-violet-600 font-semibold;
+        }
+        .mobile-nav-link.active span:first-child {
+            @apply opacity-100;
+        }
+        .mobile-nav-link:hover span:first-child {
+            @apply opacity-100;
+        }
+    </style>
+
+    <script>
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('show');
+
+            // Changer l'icône
+            const icon = mobileMenuButton.querySelector('svg');
+            if (!isExpanded) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            }
+        });
+
+        // Fermer le menu mobile lors du clic sur un lien
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('show');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                const icon = mobileMenuButton.querySelector('svg');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            });
+        });
+    </script>
+
     <script src="../front.js"></script>
+    <script>
+        // Activation/désactivation du bouton de démarrage avec animation fluide
+        document.getElementById('player-name').addEventListener('input', (e) => {
+            const startButton = document.getElementById('start-quiz');
+            const hasValue = e.target.value.trim().length > 0;
+            startButton.disabled = !hasValue;
+            startButton.classList.toggle('opacity-50', !hasValue);
+            if (hasValue) {
+                startButton.classList.add('pulse-animation');
+            } else {
+                startButton.classList.remove('pulse-animation');
+            }
+        });
+    </script>
 </body>
-<footer>
-    <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
-</footer>
 </html>

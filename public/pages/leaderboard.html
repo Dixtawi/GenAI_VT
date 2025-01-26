@@ -1,53 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classement - IA Générative</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/temp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Classement</h1>
-    </header>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/explic">Qu'est-ce que l'IA Générative ?</a>
-        <a href="/quiz">Testez vos connaissances</a>
-        <a href="/leaderboard">Classement</a>
-    </nav>
-    <main id="leaderboard-main">
-        <h2>Top 5</h2>
-        <ol id="leaderboard-list"></ol>
-    </main>
+<body class="font-['Inter'] bg-gradient-to-br from-violet-50 via-indigo-50 to-purple-50">
+    <div class="page-transition min-h-screen flex flex-col">
+        <nav class="bg-white/80 backdrop-blur-md border-b border-violet-100 sticky top-0 z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
+                            IA Générative
+                        </span>
+                    </div>
+
+                    <!-- Menu mobile (hamburger) -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" 
+                                class="text-gray-600 hover:text-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-500 rounded-lg p-2"
+                                aria-label="Menu principal"
+                                aria-expanded="false">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu desktop -->
+                    <div class="hidden md:flex space-x-6">
+                        <a href="/pages/index.html" class="nav-link">Accueil</a>
+                        <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
+                        <a href="/pages/quiz.html" class="nav-link">Quiz</a>
+                        <a href="/pages/leaderboard.html" class="nav-link active">Classement</a>
+                    </div>
+                </div>
+
+                <!-- Menu mobile (contenu) -->
+                <div id="mobile-menu" class="hidden md:hidden">
+                    <div class="py-2">
+                        <a href="/pages/index.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🏠</span>
+                                Accueil
+                            </span>
+                        </a>
+                        <a href="/pages/explic.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">📚</span>
+                                Découvrir l'IA
+                            </span>
+                        </a>
+                        <a href="/pages/quiz.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🎯</span>
+                                Quiz
+                            </span>
+                        </a>
+                        <a href="/pages/leaderboard.html" class="mobile-nav-link active">
+                            <span class="flex items-center">
+                                <span class="mr-3">🏆</span>
+                                Classement
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow container mx-auto px-4 py-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                        Classement
+                    </h1>
+                    <p class="text-xl text-gray-600">
+                        Découvrez les meilleurs scores de nos participants !
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Position</th>
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Joueur</th>
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Score</th>
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Temps</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leaderboard-list">
+                                    <tr>
+                                        <td colspan="4" class="px-6 py-12 text-center text-gray-500">
+                                            Chargement des scores...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <a href="/pages/quiz.html" 
+                       class="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold transform transition-all duration-200 hover:scale-105 hover:shadow-lg">
+                        Tenter de battre les records
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-white/80 backdrop-blur-md border-t border-violet-100 py-8">
+            <div class="container mx-auto px-4 text-center text-gray-600">
+                <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
+            </div>
+        </footer>
+    </div>
+
+    <style>
+        .mobile-nav-link {
+            @apply block px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 hover:text-violet-600 hover:bg-violet-50/80 transition-all duration-200;
+        }
+        .mobile-nav-link.active {
+            @apply bg-violet-50/80 text-violet-600 font-semibold;
+        }
+        .mobile-nav-link:hover .opacity-0 {
+            @apply opacity-100;
+        }
+        .mobile-nav-link.active .opacity-0 {
+            @apply opacity-100;
+        }
+    </style>
+
     <script>
-        fetch('/api/leaderboard')
-            .then(response => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            const leaderboardList = document.getElementById('leaderboard-list');
+            
+            try {
+                const response = await fetch('/api/leaderboard');
                 if (!response.ok) {
                     throw new Error('Erreur réseau');
                 }
-                return response.json();
-            })
-            .then(data => {
-                const leaderboardList = document.getElementById('leaderboard-list');
-                if (leaderboardList && Array.isArray(data)) {
-                    leaderboardList.innerHTML = data
-                        .slice(0, 5)
-                        .map(entry => 
-                            `<li>${entry.name}: ${entry.score} points (${Math.floor(entry.time / 60)}min ${entry.time % 60}s)</li>`)
-                        .join('');
-                } else {
-                    leaderboardList.innerHTML = '<li>Aucun score pour le moment</li>';
+                const data = await response.json();
+                
+                if (data.length === 0) {
+                    leaderboardList.innerHTML = `
+                        <tr>
+                            <td colspan="4" class="px-6 py-12 text-center text-gray-500">
+                                Aucun score enregistré pour le moment.
+                                <br>
+                                <a href="/pages/quiz.html" class="text-violet-600 hover:text-violet-700 mt-2 inline-block">
+                                    Soyez le premier à jouer !
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                    return;
                 }
-            })
-            .catch(error => {
-                console.error('Erreur lors du chargement du leaderboard:', error);
-                document.getElementById('leaderboard-list').innerHTML = 
-                    '<li>Erreur lors du chargement des scores</li>';
+
+                leaderboardList.innerHTML = data.map((entry, index) => {
+                    const minutes = Math.floor(entry.time / 60);
+                    const seconds = entry.time % 60;
+                    const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    const position = index + 1;
+                    const medalClass = position <= 3 ? [
+                        'bg-yellow-100 text-yellow-800',
+                        'bg-gray-100 text-gray-800',
+                        'bg-amber-100 text-amber-800'
+                    ][position - 1] : '';
+
+                    return `
+                        <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full ${medalClass} font-bold">
+                                    ${position}
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 font-medium">${entry.name}</td>
+                            <td class="px-6 py-4">${entry.score} points</td>
+                            <td class="px-6 py-4">${formattedTime}</td>
+                        </tr>
+                    `;
+                }).join('');
+            } catch (error) {
+                console.error('Erreur:', error);
+                leaderboardList.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="px-6 py-12 text-center text-red-500">
+                            Erreur lors du chargement des scores.
+                            <br>
+                            <button onclick="location.reload()" class="text-violet-600 hover:text-violet-700 mt-2">
+                                Réessayer
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }
+        });
+
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('show');
+
+            // Changer l'icône
+            const icon = mobileMenuButton.querySelector('svg');
+            if (!isExpanded) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            }
+        });
+
+        // Fermer le menu mobile lors du clic sur un lien
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('show');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                const icon = mobileMenuButton.querySelector('svg');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
             });
+        });
     </script>
 </body>
-<footer>
-    <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
-</footer>
 </html>
