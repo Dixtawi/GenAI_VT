@@ -7,7 +7,7 @@
             "carapuce"
         ],
         "correct": 0,
-        "difficulty": "easy",
+        "difficulty": "test",
         "type" : "image"
     },
     {
@@ -16,26 +16,14 @@
             "Une IA qui génère des réponses basées sur des données statistiques",
             "Une technologie qui permet de créer du contenu comme des images ou du texte",
             "Un système qui réagit uniquement aux commandes vocales",
-            "Une technique pour accélérer les calculs informatiques"
+            "Une IA qui génère elle-même ses données d'entraînement"
         ],
         "correct": 1,
         "difficulty": "medium",
         "type" : "definition"
     },
     {
-        "question": "Quel est un exemple courant d'IA générative ?",
-        "options": [
-            "Calcul des prévisions météorologiques",
-            "Création d'une œuvre d'art par une IA comme DALL·E",
-            "Analyse des données financières",
-            "Optimisation des itinéraires de livraison"
-        ],
-        "correct": 1,
-        "difficulty": "medium",
-        "type" : "definition"
-    },
-    {
-        "question": "Quel algorithme est utilisé dans GPT-3 ?",
+        "question": "Quel technologie est utilisée dans un modèle comme GPT ?",
         "options": [
             "Les réseaux de convolution",
             "Les réseaux de neurones récurrents (RNN)",
@@ -107,7 +95,7 @@
         "type" : "definition"
     },
     {
-        "question": "Quel outil est souvent utilisé pour entraîner des modèles génératifs ?",
+        "question": "Quel composante est essentielle pour entraîner des modèles génératifs ?",
         "options": [
             "Des moteurs de jeu comme Unity ou Unreal Engine",
             "Des datasets massifs contenant des exemples de contenu",
@@ -167,18 +155,6 @@
         "type" : "definition"
     },
     {
-        "question": "Quelle technique l'IA générative utilise-t-elle souvent pour créer du contenu ?",
-        "options": [
-            "L'apprentissage supervisé",
-            "Les réseaux génératifs adversariaux (GAN)",
-            "Les heuristiques basées sur l'expérience humaine",
-            "L'apprentissage non-supervisé"
-        ],
-        "correct": 1,
-        "difficulty": "medium",
-        "type" : "definition"
-    },
-    {
         "question": "Qu'est-ce qui pourrait limiter l'utilisation de l'IA générative dans les jeux ?",
         "options": [
             "Les attentes croissantes des joueurs de générer du nouveau contenu",
@@ -187,18 +163,6 @@
             "Les coûts de calcul élevés pour générer du contenu en temps réel"
         ],
         "correct": 3,
-        "difficulty": "medium",
-        "type" : "definition"
-    },
-    {
-        "question": "Quelle IA générative célèbre a été utilisée dans certains projets de jeux vidéo ?",
-        "options": [
-            "ChatGPT",
-            "Photoshop AI",
-            "AlphaZero",
-            "IBM Watson"
-        ],
-        "correct": 0,
         "difficulty": "medium",
         "type" : "definition"
     },
@@ -223,7 +187,7 @@
             "L'utilisation de modèles physiques pour simuler le contenu"
         ],
         "correct": 0,
-        "difficulty": "medium",
+        "difficulty": "hard",
         "type" : "definition"
     },
     {
@@ -249,5 +213,89 @@
         "correct": 0,
         "difficulty": "medium",
         "type" : "definition"
+    },
+    {
+        "question": "Quel projet montre comment l'IA peut créer des mondes ouverts en temps réel ?",
+        "options": [
+            "Point-E",
+            "Vision Transformers",
+            "Projet Oasis de Decart",
+            "Stable Diffusion 3D"
+        ],
+        "correct": 2,
+        "difficulty": "easy",
+        "type": "definition"
+    },
+    {
+        "question": "Quel mécanisme est central dans les Transformers pour analyser les relations complexes ?",
+        "options": [
+            "L'attention",
+            "Les réseaux convolutifs",
+            "Les arbres de décision",
+            "Les algorithmes génétiques"
+        ],
+        "correct": 0,
+        "difficulty": "hard",
+        "type": "definition"
+    },
+    {
+        "question": "Quelle est la première étape du processus de Point-E pour générer des objets 3D ?",
+        "options": [
+            "La création d'un nuage de points",
+            "La conversion d'un texte en image synthétique",
+            "La segmentation des données 3D",
+            "L'analyse des relations géométriques"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type": "definition"
+    },
+    {
+        "question": "Comment Point-E se distingue des méthodes traditionnelles pour générer des objets 3D ?",
+        "options": [
+            "Il offre une résolution plus élevée",
+            "Il génère des objets en quelques secondes",
+            "Il n'a pas besoin de descriptions textuelles",
+            "Il ne nécessite pas de modèles préentraînés"
+        ],
+        "correct": 1,
+        "difficulty": "easy",
+        "type": "definition"
+    },
+    {
+        "question": "Quelle approche adoptent les Vision Transformers pour traiter les données 3D ?",
+        "options": [
+            "Ils utilisent des réseaux neuronaux récurrents pour analyser les données",
+            "Ils divisent les données en patches ou segments avant de les réassembler",
+            "Ils utilisent uniquement des algorithmes de diffusion textuelle",
+            "Ils analysent les données en un seul passage linéaire"
+        ],
+        "correct": 1,
+        "difficulty": "hard",
+        "type": "definition"
+    },
+    {
+        "question": "Quelle est une limite actuelle des objets générés par Point-E ?",
+        "options": [
+            "La résolution des modèles reste limitée",
+            "Les objets ne peuvent pas être utilisés dans des jeux vidéo",
+            "Le modèle est trop lent pour les applications en temps réel",
+            "Il nécessite des descriptions textuelles très détaillées"
+        ],
+        "correct": 0,
+        "difficulty": "easy",
+        "type": "definition"
+    },
+    {
+        "question": "Quel aspect des Transformers les rend adaptés à la modélisation 3D ?",
+        "options": [
+            "Leur capacité à traiter des données visuelles uniquement",
+            "Leur flexibilité dans l'analyse des relations géométriques",
+            "Leur compatibilité avec les moteurs de rendu",
+            "Leur vitesse de calcul sur les grandes bases de données"
+        ],
+        "correct": 1,
+        "difficulty": "hard",
+        "type": "definition"
     }
 ]
