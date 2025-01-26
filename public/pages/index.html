@@ -8,24 +8,72 @@
     <link rel="stylesheet" href="../styles/temp.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="font-['Inter']">
-    <div class="page-transition">
-        <nav class="flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
-                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">
-                    IA Générative
-                </span>
-            </div>
-            <div class="flex space-x-6">
-                <a href="/pages/index.html" class="nav-link active">Accueil</a>
-                <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
-                <a href="/pages/quiz.html" class="nav-link">Quiz</a>
-                <a href="/pages/leaderboard.html" class="nav-link">Classement</a>
+<body class="font-['Inter'] bg-gradient-to-br from-violet-50 via-indigo-50 to-purple-50">
+    <div class="page-transition min-h-screen flex flex-col">
+        <nav class="bg-white/80 backdrop-blur-md border-b border-violet-100 sticky top-0 z-50">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
+                            IA Générative
+                        </span>
+                    </div>
+
+                    <!-- Menu mobile (hamburger) -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" 
+                                class="text-gray-600 hover:text-violet-600 focus:outline-none p-2 rounded-lg transition-colors"
+                                aria-label="Menu principal"
+                                aria-expanded="false">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu desktop -->
+                    <div class="hidden md:flex space-x-6">
+                        <a href="/pages/index.html" class="nav-link active">Accueil</a>
+                        <a href="/pages/explic.html" class="nav-link">Découvrir l'IA</a>
+                        <a href="/pages/quiz.html" class="nav-link">Quiz</a>
+                        <a href="/pages/leaderboard.html" class="nav-link">Classement</a>
+                    </div>
+                </div>
+
+                <!-- Menu mobile (contenu) -->
+                <div id="mobile-menu" class="hidden md:hidden">
+                    <div class="py-2">
+                        <a href="/pages/index.html" class="mobile-nav-link active">
+                            <span class="flex items-center">
+                                <span class="mr-3">🏠</span>
+                                Accueil
+                            </span>
+                        </a>
+                        <a href="/pages/explic.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">📚</span>
+                                Découvrir l'IA
+                            </span>
+                        </a>
+                        <a href="/pages/quiz.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🎯</span>
+                                Quiz
+                            </span>
+                        </a>
+                        <a href="/pages/leaderboard.html" class="mobile-nav-link">
+                            <span class="flex items-center">
+                                <span class="mr-3">🏆</span>
+                                Classement
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </nav>
 
-        <main class="container mx-auto px-4 py-12">
+        <main class="flex-grow container mx-auto px-4 py-12">
             <header class="text-center mb-16">
                 <h1 class="text-5xl font-bold mb-6">
                     Découvrez l'IA Générative
@@ -64,24 +112,59 @@
                     <a href="/pages/leaderboard.html" class="btn-primary mt-4 inline-block">Voir le classement</a>
                 </div>
             </div>
-
-            <div class="bg-white rounded-2xl shadow-xl p-8 text-center">
-                <h2 class="text-3xl font-bold mb-4">Prêt à commencer ?</h2>
-                <p class="text-gray-600 mb-6">
-                    Lancez-vous dans l'aventure et découvrez le monde passionnant de l'IA générative !
-                </p>
-                <a href="/pages/quiz.html" class="btn-secondary inline-block">
-                    Commencer le quiz
-                </a>
-            </div>
         </main>
 
-        <footer class="bg-gray-50 py-12 mt-24">
+        <footer class="bg-white/80 backdrop-blur-md border-t border-violet-100 py-8">
             <div class="container mx-auto px-4 text-center text-gray-600">
                 <p>&copy; 2025 - Ressource pédagogique sur l'IA Générative</p>
-                <p class="mt-2">Créé avec ❤️ pour les passionnés d'IA</p>
             </div>
         </footer>
     </div>
+
+    <style>
+        .mobile-nav-link {
+            @apply block px-4 py-3 rounded-md text-base font-medium text-gray-700 
+                   hover:text-violet-600 hover:bg-violet-50 transition-all duration-200 
+                   border-b border-violet-50 last:border-b-0;
+        }
+        .mobile-nav-link.active {
+            @apply bg-violet-50 text-violet-600 font-semibold;
+        }
+        #mobile-menu.show {
+            @apply animate-fadeIn;
+        }
+    </style>
+
+    <script>
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('show');
+
+            // Changer l'icône
+            const icon = mobileMenuButton.querySelector('svg');
+            if (!isExpanded) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            }
+        });
+
+        // Fermer le menu mobile lors du clic sur un lien
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('show');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                const icon = mobileMenuButton.querySelector('svg');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            });
+        });
+    </script>
 </body>
 </html>

@@ -6,20 +6,56 @@ body {
     color: #1f2937;
 }
 
-.nav-link {
-    color: #4b5563;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: color 0.2s;
+/* Navigation mobile */
+#mobile-menu {
+    @apply fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-lg shadow-lg border-t border-violet-100;
+    @apply transition-all duration-300 ease-in-out;
+    @apply transform -translate-y-2 opacity-0;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
 }
 
-.nav-link:hover {
-    color: #0ea5e9;
+#mobile-menu.show {
+    @apply transform translate-y-0 opacity-100;
+    max-height: 300px;
+}
+
+.mobile-nav-link {
+    @apply block w-full px-6 py-4 text-base font-medium text-gray-700;
+    @apply hover:text-violet-600 hover:bg-violet-50;
+    @apply transition-all duration-200;
+    @apply border-b border-violet-50 last:border-b-0;
+}
+
+.mobile-nav-link.active {
+    @apply bg-violet-50 text-violet-600 border-l-4 border-l-violet-600;
+}
+
+/* Navigation desktop */
+.nav-link {
+    @apply px-3 py-2 text-gray-700 hover:text-violet-600 font-medium transition-colors relative;
+}
+
+.nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+    @apply w-full;
 }
 
 .nav-link.active {
-    color: #0ea5e9;
-    font-weight: 500;
+    @apply text-violet-600;
+}
+
+.nav-link.active::after {
+    @apply w-full;
+}
+
+.page-transition {
+    @apply transition-opacity duration-300;
 }
 
 .card {
