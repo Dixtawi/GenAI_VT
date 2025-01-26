@@ -1,15 +1,25 @@
 [
     {
-        "question": "Lequel est Pikachu ?",
+        "question": "Laquelle est une vraie image du jeu Minecraft ?",
         "options": [
-            "pikachu",
-            "salameche",
-            "carapuce"
+            "minecraft",
+            "oasis"
         ],
         "correct": 0,
-        "difficulty": "test",
+        "difficulty": "medium",
         "type": "image",
-        "explication": "Pikachu est un Pokémon électrique jaune, l'un des plus iconiques de la franchise Pokémon."
+        "explication": "La vraie image est floutée pour ne pas différencier à la qualité. L'autre image est générée par Oasis."
+    },
+    {
+        "question": "Laquelle est une vraie image du jeu Minecraft ?",
+        "options": [
+            "minecraft2",
+            "oasis2"
+        ],
+        "correct": 0,
+        "difficulty": "medium",
+        "type": "image",
+        "explication": "La fausse image est générée par Oasis. Cela ressemblerait presque à un vrai gameplay Minecraft!"
     },
     {
         "question": "Qu'est-ce que l'IA générative ?",
