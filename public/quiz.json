@@ -1,5 +1,16 @@
 [
     {
+        "question": "Lequel est Pikachu ?",
+        "options": [
+            "pikachu",
+            "salameche",
+            "carapuce"
+        ],
+        "correct": 0,
+        "difficulty": "easy",
+        "type" : "image"
+    },
+    {
         "question": "Qu'est-ce que l'IA générative ?",
         "options": [
             "Une IA qui génère des réponses basées sur des données statistiques",
@@ -36,17 +47,6 @@
         "type" : "definition"
     },
     {
-        "question": "Lequel est Pikachu ?",
-        "options": [
-            "pikachu",
-            "salameche",
-            "carapuce"
-        ],
-        "correct": 0,
-        "difficulty": "easy",
-        "type" : "image"
-    },
-    {
         "question": "Qu'est-ce qu'un hyperparamètre dans un modèle d'IA ?",
         "options": [
             "Un paramètre ajusté automatiquement lors de l'entraînement",
@@ -56,6 +56,198 @@
         ],
         "correct": 1,
         "difficulty": "hard",
+        "type" : "definition"
+    },
+    {
+        "question": "Qu'est-ce que l'IA générative peut apporter aux jeux vidéo ?",
+        "options": [
+            "Des graphismes améliorés sans besoin de matériel haut de gamme",
+            "Des environnements et dialogues générés dynamiquement",
+            "Des scripts de jeu optimisés pour de meilleures performances",
+            "Une réduction des temps de chargement des maps"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Comment l'IA générative est-elle utilisée pour créer des dialogues dans les jeux ?",
+        "options": [
+            "En codant manuellement chaque phrase du personnage",
+            "En générant des réponses adaptées en temps réel en fonction des choix du joueur",
+            "En utilisant des algorithmes de NLP",
+            "En prenant une phrase aléatoire dans une base de données de dialogues"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Quel est un exemple d'utilisation de l'IA générative dans les graphismes des jeux ?",
+        "options": [
+            "Créer des textures ultra-réalistes basées sur des descriptions textuelles",
+            "Générer des bandes sonores adaptées aux actions du joueur",
+            "Améliorer l'intelligence des personnages non-joueurs (PNJ)",
+            "Remplacer le moteur de rendu graphique d'un jeu"
+        ],
+        "correct": 0,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Quelle est une limite actuelle de l'IA générative dans les jeux vidéo ?",
+        "options": [
+            "L'incapacité à fonctionner hors ligne",
+            "La difficulté à produire un contenu cohérent et pertinent",
+            "Le manque d'avancées innovantes dans le domaine",
+            "Son incompatibilité avec les consoles modernes"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Quel outil est souvent utilisé pour entraîner des modèles génératifs ?",
+        "options": [
+            "Des moteurs de jeu comme Unity ou Unreal Engine",
+            "Des datasets massifs contenant des exemples de contenu",
+            "La librairie scikit-learn",
+            "Des programmes spécifiques pour créer des textures"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Qu'est-ce qu'un modèle comme GPT peut apporter à un jeu vidéo ?",
+        "options": [
+            "Des réponses intelligentes des PNJ",
+            "Un affichage graphique ultra-réaliste",
+            "Une optimisation des calculs physiques",
+            "Une amélioration du système multijoueur"
+        ],
+        "correct": 0,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Quelle est une des préoccupations éthiques liées à l'utilisation de l'IA générative dans les jeux vidéo ?",
+        "options": [
+            "La surexploitation des ressources informatiques",
+            "Le remplacement des artistes et scénaristes",
+            "La hausse du coût de développement des jeux",
+            "L'absence de compatibilité avec les anciens jeux"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Comment l'IA générative peut-elle améliorer les quêtes dans les RPG ?",
+        "options": [
+            "En proposant des quêtes selon le style de jeu du joueur",
+            "En rendant les quêtes plus faciles à terminer",
+            "En réduisant le nombre de quêtes secondaires inutiles",
+            "En ajoutant des tutoriels plus détaillés pour chaque quête"
+        ],
+        "correct": 0,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Quels jeux pourraient le plus bénéficier de l'IA générative ?",
+        "options": [
+            "Les jeux de puzzle",
+            "Les jeux en openworld",
+            "Les jeux de combat",
+            "Les jeux de sport"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Quelle technique l'IA générative utilise-t-elle souvent pour créer du contenu ?",
+        "options": [
+            "L'apprentissage supervisé",
+            "Les réseaux génératifs adversariaux (GAN)",
+            "Les heuristiques basées sur l'expérience humaine",
+            "L'apprentissage non-supervisé"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Qu'est-ce qui pourrait limiter l'utilisation de l'IA générative dans les jeux ?",
+        "options": [
+            "Les attentes croissantes des joueurs de générer du nouveau contenu",
+            "Les capacités limitées des consoles actuelles",
+            "Le manque de créativité de l'IA",
+            "Les coûts de calcul élevés pour générer du contenu en temps réel"
+        ],
+        "correct": 3,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Quelle IA générative célèbre a été utilisée dans certains projets de jeux vidéo ?",
+        "options": [
+            "ChatGPT",
+            "Photoshop AI",
+            "AlphaZero",
+            "IBM Watson"
+        ],
+        "correct": 0,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "L'IA générative peut-elle créer des musiques pour les jeux vidéo ?",
+        "options": [
+            "Non, elle ne génère que des dialogues",
+            "Oui, en composant des morceaux en temps réel selon l'action",
+            "Seulement pour les jeux rétro",
+            "Non, elle se limite aux graphismes"
+        ],
+        "correct": 1,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Que signifie 'génération procédurale' dans les jeux vidéo ?",
+        "options": [
+            "La création de contenu aléatoire à l'aide d'algorithmes",
+            "La génération d'environnements basés sur des règles fixes",
+            "La reproduction exacte de mondes existants",
+            "L'utilisation de modèles physiques pour simuler le contenu"
+        ],
+        "correct": 0,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Comment l'IA générative pourrait-elle transformer le processus de test des jeux ?",
+        "options": [
+            "En simulant des joueurs",
+            "En remplaçant complètement les testeurs humains",
+            "En trouvant automatiquement des bugs dans le code",
+            "En réduisant le temps de compilation des jeux"
+        ],
+        "correct": 0,
+        "difficulty": "medium",
+        "type" : "definition"
+    },
+    {
+        "question": "Qu'est-ce que l'IA générative pourrait permettre dans les jeux multijoueurs ?",
+        "options": [
+            "Créer des adversaires artificiels crédibles",
+            "Améliorer la latence des serveurs",
+            "Générer automatiquement des classements de joueurs",
+            "Rendre tous les joueurs égaux en compétences"
+        ],
+        "correct": 0,
+        "difficulty": "medium",
         "type" : "definition"
     }
 ]
