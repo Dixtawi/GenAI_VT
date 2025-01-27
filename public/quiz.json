@@ -74,19 +74,6 @@
         "explication": "L'IA générative permet de créer du contenu unique et interactif, comme des environnements ou dialogues personnalisés pour les joueurs."
     },
     {
-        "question": "Comment l'IA générative est-elle utilisée pour créer des dialogues dans les jeux ?",
-        "options": [
-            "En codant manuellement chaque phrase du personnage",
-            "En générant des réponses adaptées en temps réel en fonction des choix du joueur",
-            "En utilisant des algorithmes de NLP pour comprendre le joueur",
-            "En prenant une phrase aléatoire dans une base de données de dialogues"
-        ],
-        "correct": 1,
-        "difficulty": "medium",
-        "type": "definition",
-        "explication": "L'IA générative adapte les dialogues aux actions et choix du joueur, offrant une expérience narrative fluide et dynamique."
-    },
-    {
         "question": "Quelle est une limite actuelle de l'IA générative dans les jeux vidéo ?",
         "options": [
             "L'incapacité à fonctionner hors ligne",
@@ -221,7 +208,7 @@
         "options": [
             "Point-E",
             "Vision Transformers",
-            "Projet Oasis de Decart",
+            "Oasis",
             "Stable Diffusion 3D"
         ],
         "correct": 2,
