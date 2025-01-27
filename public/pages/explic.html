@@ -82,11 +82,45 @@
                 
                             <div class="space-y-6">
                                 <section>
-                                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">La modélisation 3D par IA générative : principes et état de l'art</h3>
+                                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Les capacités de l'IA sur l'image</h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Les tâches que l'IA peut résoudre dépendent de la problématique à traiter et sont variées. Parmis celle-ci :
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-600 leading-relaxed space-y-2">
+                                        <li>La classification : attribution d'une classe à l'image entière.</li>
+                                        <li>La détection d'objet : dessin de l'emprise d'un objet dans l'image (pour compter un nombre d'instances).</li>
+                                        <li>La segmentation sémantique : chaque pixel de l'image se voit attribuer une "classe", avec une délimitation des différentes régions d'une image.</li>
+                                        <li>La segmentation d'instance : chaque pixel de l'image se voit attribuer un "numéro unique" par objet de la même classe.</li>
+                                    </ul>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Elles sont aujourd'hui traitées par des méthodes de Deep Learning. Ces méthodes analysent les images afin de déceler les signatures caractéristiques des objets,
+                                        et utilisent des architectures conçues comme des réseaux de neurones par exemple.
+                                    </p>
+                                </section>
+
+                                <section>
+                                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Le Deep Learning pour les Images</h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        En Deep Learning, les réseaux de neurones convolutifs (Convolutional Neural Networks - CNN) sont essentiels pour le traitement des images grâce à leur capacité à extraire efficacement les caractéristiques spatiales.  
+                                        Ils reposent sur le principe des convolutions.
+                                        Une image, représentée comme une matrice de pixels, est traitée à l'aide de filtres (matrices, souvent de taille 3x3 ou 5x5) que l'on lui applique.
+                                        À chaque position, les valeurs des pixels de l'image sont multipliées par celles du filtre, produisant une nouvelle matrice représentant des caractéristiques spécifiques, comme les bords ou les textures.
+                                        Répéter ce processus à différents niveaux permet d'obtenir des représentations riches et variées de l'image.
+                                    </p>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Très performants dans la majorité des cas, les CNN présentent quelques limites.
+                                        Ils permettent une extraction de caractéristiques locales, mais échouent à établir des relations globales dans une image.
+                                        La « portée » de ces caractéristiques est déterminée par la taille du filtre de convolution, mais l'opération de convolution ne permet pas de créer des liens entre ces caractéristiques.
+                                        Les Vision Transformers (ViT) résolvent ce problème.
+                                    </p>
+                                </section>
+
+                                <section>
+                                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">La modélisation 3D par IA générative : Principes et Etat de l'art</h3>
                                     <p class="text-gray-600 leading-relaxed">
                                         La modélisation 3D, essentielle dans le développement de jeux vidéo, repose historiquement sur des processus longs et coûteux,
-                                        mobilisant des équipes d'artistes 3D et de concepteurs techniques. Les modèles d'IA générative, comme ceux basés sur les 
-                                        architectures Transformers ou les modèles de diffusion, offrent une alternative capable de créer des objets et environnements en quelques clics.
+                                        mobilisant des équipes d'artistes 3D et de concepteurs techniques. Les modèles d'IA générative, comme les modèles de diffusion ou
+                                        ceux basés sur des architectures à base de Transformer, offrent une alternative capable de créer des objets et environnements.
                                     </p>
                                     <p class="text-gray-600 leading-relaxed">
                                         Des avancées comme le projet <a href="https://oasis.decart.ai/" target="_blank"><strong><u>Oasis</u></strong></a> de Decart, une plateforme de génération d'open world en temps réel, montrent à quel point 
@@ -104,12 +138,12 @@
                                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Les architectures Transformers dans les modèles génératifs</h3>
                                     <p class="text-gray-600 leading-relaxed">
                                         Les Transformers, introduits à l'origine pour le traitement du langage naturel, se sont imposés comme un outil clé dans la génération
-                                        de contenu 3D. Leur mécanisme repose sur l'attention, qui permet au modèle de se concentrer sur les relations entre les éléments d'un
+                                        de contenu. Leur principe repose sur le mécanisme d'attention, qui permet au modèle de prendre en compte les relations entre les éléments d'un
                                         ensemble de données, qu'il s'agisse de mots, de pixels ou de points dans un espace tridimensionnel. Dans la modélisation 3D, les
                                         Transformers analysent les relations complexes entre les éléments géométriques pour produire des formes cohérentes et détaillées.
                                     </p>
                                     <p class="text-gray-600 leading-relaxed">
-                                        Un exemple typique de cette architecture est l'utilisation de Vision Transformers (ViT) adaptés à des tâches tridimensionnelles. Ces
+                                        Un exemple de cette architecture est l'utilisation de Vision Transformers (ViT) adaptés à des tâches tridimensionnelles. Ces
                                         modèles divisent les données 3D en patches ou segments, les traitent indépendamment, puis les réassemblent en une structure globale
                                         cohérente. Cette approche garantit à la fois précision et flexibilité, permettant de générer des objets et environnements réalistes
                                         tout en s'adaptant aux besoins spécifiques des développeurs.
