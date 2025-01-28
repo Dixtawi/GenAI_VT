@@ -257,6 +257,7 @@ async function endGame() {
 }
 
 function startQuiz() {
+    organizedQuizData = organizeQuestionsByDifficulty(quizData);
     currentQuestionIndex = 0;
     score = 0;
     startTime = Date.now();
@@ -268,7 +269,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         // Charger les données du quiz en arrière-plan
         quizData = await fetchJSON('../quiz.json');
-        organizedQuizData = organizeQuestionsByDifficulty(quizData);
         console.log('Quiz data loaded successfully:', quizData);
     } catch (error) {
         console.error('Erreur lors du chargement des données:', error);
