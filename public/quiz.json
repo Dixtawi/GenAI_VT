@@ -74,7 +74,7 @@
         "explication": "L'IA générative permet de créer du contenu unique et interactif, comme des environnements ou dialogues personnalisés pour les joueurs."
     },
     {
-        "question": "Quelle est une limite actuelle de l'IA générative dans les jeux vidéo ?",
+        "question": "Donnez une limite actuelle de l'IA générative dans les jeux vidéo.",
         "options": [
             "L'incapacité à fonctionner hors ligne",
             "La difficulté à produire un contenu cohérent et pertinent",
@@ -113,7 +113,7 @@
         "explication": "GPT peut rendre les personnages non-joueurs (PNJ) plus vivants en leur permettant de répondre de manière cohérente et intelligente."
     },
     {
-        "question": "Quelle est une des préoccupations éthiques liées à l'utilisation de l'IA générative dans les jeux vidéo ?",
+        "question": "Donnez une des préoccupations éthiques liées à l'utilisation de l'IA générative dans les jeux vidéo.",
         "options": [
             "La surexploitation des ressources informatiques",
             "Le remplacement des artistes et scénaristes",
@@ -269,7 +269,7 @@
         "explication": "Les Vision Transformers divisent les données en petits segments (patches), permettant d'analyser et d'assembler les relations complexes entre eux."
     },
     {
-        "question": "Quelle est une limite actuelle des objets générés par Point-E ?",
+        "question": "Donnez une limite actuelle des objets générés par Point-E.",
         "options": [
             "La résolution des modèles reste limitée",
             "Les objets ne peuvent pas être utilisés dans des jeux vidéo",
