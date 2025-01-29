@@ -206,7 +206,7 @@ async function endGame() {
                         </div>
                         <div class="text-center">
                             <p class="text-sm text-gray-500 uppercase tracking-wide">Temps</p>
-                            <p class="text-3xl font-bold text-gray-800">${Math.floor(timeTaken / 1000 / 60)}:${(Math.floor(timeTaken / 1000) % 60).toString().padStart(2, '0')}.${(timeTaken % 1000)}</p>
+                            <p class="text-3xl font-bold text-gray-800">${Math.floor(timeTaken / 1000 / 60)}:${(Math.floor(timeTaken / 1000) % 60).toString().padStart(2, '0')}.${(timeTaken % 1000).toString().padStart(3, '0')}</p>
                         </div>
                     </div>
                     <p class="text-lg text-gray-600">Félicitations ${playerName} !</p>
