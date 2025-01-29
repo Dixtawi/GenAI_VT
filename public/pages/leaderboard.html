@@ -160,9 +160,10 @@
                 }
 
                 leaderboardList.innerHTML = data.map((entry, index) => {
-                    const minutes = Math.floor(entry.time / 60);
-                    const seconds = entry.time % 60;
-                    const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    const minutes = Math.floor(entry.time / 1000 / 60);
+                    const seconds = Math.floor(entry.time / 1000) % 60;
+                    const milliseconds = entry.time % 1000;
+                    const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}.${milliseconds}`;
                     
                     const position = index + 1;
                     const medalClass = position <= 3 ? [
