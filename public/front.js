@@ -185,7 +185,7 @@ function nextQuestion() {
 
 async function endGame() {
     const endTime = Date.now();
-    const timeTaken = Math.floor((endTime - startTime) / 1000);
+    const timeTaken = (endTime - startTime);
     
     let message = `
         <div class="bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-500">
@@ -206,7 +206,7 @@ async function endGame() {
                         </div>
                         <div class="text-center">
                             <p class="text-sm text-gray-500 uppercase tracking-wide">Temps</p>
-                            <p class="text-3xl font-bold text-gray-800">${Math.floor(timeTaken / 60)}:${(timeTaken % 60).toString().padStart(2, '0')}</p>
+                            <p class="text-3xl font-bold text-gray-800">${Math.floor(timeTaken / 1000 / 60)}:${(Math.floor(timeTaken / 1000) % 60).toString().padStart(2, '0')}.${(timeTaken % 1000)}</p>
                         </div>
                     </div>
                     <p class="text-lg text-gray-600">Félicitations ${playerName} !</p>
